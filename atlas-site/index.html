@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>아틀라스 트리</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav><a href="index.html" class=on>아틀라스 트리</a> <a href="data.html">English</a></nav>
+  <div class="search">
+    <input id="q" type="search" placeholder="노드 검색 (한글/영어)" autocomplete="off" title="노드 이름이나 설명의 단어 (한글 또는 영어). Enter: 다음 결과, Esc: 지우기">
+    <span id="hits"></span>
+  </div>
+  <div class="zoom">
+    <button id="out" title="축소">&minus;</button>
+    <span id="pct"></span>
+    <button id="in" title="확대">+</button>
+    <button id="fit" title="트리를 화면에 맞추기">맞춤</button>
+    <button id="bg" title="배경 보이기 / 숨기기 (B)">배경</button>
+    <button id="toggle" title="선택 패널 보이기 / 숨기기">선택 <span id="badge">0</span></button>
+  </div>
+</header>
+<canvas id="c"></canvas>
+<aside id="panel">
+  <div class="ph">
+    <span id="count"></span>
+    <button id="clear">초기화</button>
+  </div>
+  <p id="empty">트리에서 노드를 클릭해 선택하세요 (최대 <span id="max"></span>포인트). 선택한 효과가 여기에 합산됩니다. 선택지가 여러 개인 노드는 하나를 고르라고 물어봅니다.</p>
+  <h3>효과</h3>
+  <ul id="effects"></ul>
+  <h3>노드</h3>
+  <ul id="picked"></ul>
+</aside>
+<div id="tip"></div>
+<div id="menu"></div>
+<script src="trees/data.ko.js"></script>
+<script src="viewer.ko.js"></script>
+</body>
+</html>

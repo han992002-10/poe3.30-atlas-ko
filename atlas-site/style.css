@@ -1,0 +1,64 @@
+html, body { margin: 0; height: 100%; background: #08090c; color: #ccc; font: 14px/1.4 Verdana, Geneva, sans-serif; overflow: hidden; }
+
+header { position: fixed; top: 0; left: 0; right: 0; min-height: 36px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 4px 12px; background: #111; border-bottom: 1px solid #2a2a2a; z-index: 2; }
+header nav a { color: #9a8a6a; text-decoration: none; margin-right: 12px; }
+header nav a.on, header nav a:hover { color: #e8d8a8; }
+header .search { display: flex; align-items: center; gap: 6px; }
+#q { width: 220px; height: 24px; box-sizing: border-box; padding: 0 6px; background: #0b0b0b; color: #ddd; border: 1px solid #3a3a3a; font: inherit; }
+#q:focus { outline: none; border-color: #6b5a3c; }
+#hits { color: #888; font-size: 12px; min-width: 60px; }
+header .zoom { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+header button { background: #1d1d1d; color: #ccc; border: 1px solid #3a3a3a; min-width: 28px; height: 24px; cursor: pointer; font: inherit; }
+header button:hover { background: #2a2a2a; }
+header button.on { border-color: #6b5a3c; color: #e8d8a8; }
+#toggle { margin-left: 8px; padding: 0 8px; }
+#bg { padding: 0 8px; }
+#pct { width: 48px; text-align: center; color: #888; }
+
+canvas { position: fixed; top: 36px; left: 0; display: block; cursor: grab; }
+canvas.drag { cursor: grabbing; }
+
+#panel { position: fixed; top: 36px; right: 0; bottom: 0; width: 340px; box-sizing: border-box; padding: 10px 12px 16px; overflow-y: auto; background: rgba(14,14,14,.96); border-left: 1px solid #2a2a2a; z-index: 1; font-size: 13px; }
+#panel.hidden { display: none; }
+#panel .ph { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+#count { color: #e8d8a8; }
+#count.full { color: #e07050; }
+#panel button { background: #1d1d1d; color: #ccc; border: 1px solid #3a3a3a; height: 22px; cursor: pointer; font: inherit; }
+#panel button:hover { background: #2a2a2a; }
+#panel h3 { margin: 14px 0 4px; font-size: 12px; font-weight: normal; color: #9a8a6a; text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid #2a2a2a; padding-bottom: 2px; }
+#panel ul { list-style: none; margin: 0; padding: 0; }
+#empty { color: #777; margin: 4px 0; }
+#effects li { color: #8888ff; white-space: pre-line; padding: 3px 0; border-bottom: 1px solid #1c1c1c; }
+#effects li .n { color: #777; font-size: 11px; margin-left: 4px; }
+#picked li { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; padding: 1px 0; }
+#picked li select { flex-basis: 100%; margin: 0 0 4px 10px; max-width: calc(100% - 10px); background: #0b0b0b; color: #8888ff; border: 1px solid #3a3a3a; font: inherit; font-size: 12px; }
+#picked li span { flex: 1; cursor: pointer; color: #bbb; }
+#picked li span:hover { color: #e8d8a8; }
+#picked li.notable span { color: #d8c8a0; }
+#picked li.keystone span { color: #e8a860; }
+#picked li button { height: 18px; min-width: 18px; padding: 0; line-height: 1; color: #888; }
+
+#tip { position: fixed; display: none; max-width: 380px; padding: 8px 10px; background: rgba(10,10,10,.95); border: 1px solid #5a4a2a; pointer-events: none; z-index: 3; font-size: 13px; }
+#tip b { display: block; color: #e8d8a8; margin-bottom: 4px; }
+#tip .stat { color: #8888ff; white-space: pre-line; }
+#tip .rem { color: #888; font-style: italic; }
+#tip .fl { color: #a07020; font-style: italic; margin-top: 4px; }
+#tip .hint { color: #666; font-size: 11px; margin-top: 6px; }
+#tip .choices { margin-top: 4px; border-left: 2px solid #3a3a3a; padding-left: 6px; }
+#tip .choices div { color: #6a6aa8; white-space: pre-line; }
+#tip .choices div.on { color: #e8c060; }
+
+#menu { position: fixed; display: none; width: 340px; max-width: calc(100vw - 16px); box-sizing: border-box; padding: 8px 10px; background: rgba(10,10,10,.97); border: 1px solid #8a6a3a; z-index: 4; font-size: 13px; }
+#menu b { display: block; color: #e8d8a8; margin-bottom: 4px; }
+#menu .stat { color: #8888ff; white-space: pre-line; margin-bottom: 4px; }
+#menu button { display: block; width: 100%; margin-top: 4px; padding: 4px 6px; text-align: left; background: #1a1a1a; color: #aab; border: 1px solid #333; cursor: pointer; font: inherit; }
+#menu button:hover { background: #262626; border-color: #6b5a3c; color: #e8d8a8; }
+#menu button.on { border-color: #e8c060; color: #e8c060; }
+#menu button.rm { color: #e07050; margin-top: 8px; }
+#menu .hint { color: #666; font-size: 11px; margin-top: 6px; }
+
+@media (max-width: 600px) {
+  header nav a { margin-right: 6px; font-size: 12px; }
+  #q { width: 150px; }
+  #panel { width: 100%; border-left: 0; }
+}

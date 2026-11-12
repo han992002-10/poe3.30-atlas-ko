@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Tree</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav><a href="data.html" class=on>Atlas Tree</a> <a href="index.html">한국어</a></nav>
+  <div class="search">
+    <input id="q" type="search" placeholder="Search nodes" autocomplete="off" title="Words in node names or descriptions. Enter: next match, Esc: clear">
+    <span id="hits"></span>
+  </div>
+  <div class="zoom">
+    <button id="out" title="Zoom out">&minus;</button>
+    <span id="pct"></span>
+    <button id="in" title="Zoom in">+</button>
+    <button id="fit" title="Fit tree to screen">Fit</button>
+    <button id="bg" title="Show / hide the background (B)">Background</button>
+    <button id="toggle" title="Show / hide the selection panel">Selected <span id="badge">0</span></button>
+  </div>
+</header>
+<canvas id="c"></canvas>
+<aside id="panel">
+  <div class="ph">
+    <span id="count"></span>
+    <button id="clear">Clear</button>
+  </div>
+  <p id="empty">Click nodes on the tree to select them (up to <span id="max"></span> points). Their effects add up here. Nodes with several choices ask which one you want.</p>
+  <h3>Effects</h3>
+  <ul id="effects"></ul>
+  <h3>Nodes</h3>
+  <ul id="picked"></ul>
+</aside>
+<div id="tip"></div>
+<div id="menu"></div>
+<script src="trees/data.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
